@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('homepage') }}
+{% endblock %}
+
+{% block body %}
+
+<div class="wrapper">
+    <h1>HOMEPAGE</h1>
+    <h2>utilisateurs</h2>
+        <div>
+            <span>{{ utilisateurs.nom~" "~utilisateurs.prenom}}</span>
+        </div>
+    <h2>Societe</h2>
+        <div>
+            <span>{{ societes.nom}}</span>
+        </div>
+    <h2>Objets</h2>
+    {% for objet in objets %}
+        <div>
+            <span>{{ objet.nom}}</span>
+        </div>
+    {% endfor %}
+</div>
+<div id="test-root"></div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('homepage')}}
+{% endblock %}
